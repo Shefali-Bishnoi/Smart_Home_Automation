@@ -1,311 +1,218 @@
-# [Smart Home]{.underline}
 
-# Report By -- Shefali Bishnoi(2301CS87), Juhi Sahni(2301CS88), Saniya Prakash(2301CS49), Manvitha Reddy(2301CS29)
+# 🌐 Smart Home Automation System
 
-# Introduction
+## 📘 Introduction
 
-This project integrates three critical smart home systems into a unified
-Arduino-based controller:
+This project integrates three critical smart home systems into a unified Arduino-based controller:
 
-1.  **Home Security and Fire Detection System**: Monitors for
-    unauthorized entry and fire hazards, with controlled door locking
-    mechanisms and alarm capabilities.
+- **🏠 Home Security and Fire Detection System**  
+  Monitors for unauthorized entry and fire hazards, with controlled door locking mechanisms and alarm capabilities.
 
-2.  **Rainwater Harvesting System**: Automatically collects rainwater
-    when rain is detected and manages tank capacity.
+- **💧 Rainwater Harvesting System**  
+  Automatically collects rainwater when rain is detected and manages tank capacity.
 
-3.  **Motion-Activated Smart Lighting**: Intelligently controls lighting
-    based on motion detection.
+- **💡 Motion-Activated Smart Lighting**  
+  Intelligently controls lighting based on motion detection.
 
-The integration allows these systems to work together seamlessly while
-sharing hardware resources and providing centralized monitoring through
-a serial interface.
+These systems share hardware resources and provide centralized monitoring through a serial interface, ensuring seamless operation and efficient home automation.
 
-# Motivation
+---
 
-The motivation for this project stems from several factors:
+## 🎯 Motivation
 
--   **Resource Efficiency**: Combining multiple home management systems
-    on a single microcontroller reduces hardware costs and power
-    consumption.
+The motivation behind this project stems from the following goals:
 
--   **Safety and Security**: Creating an integrated approach to home
-    safety that addresses multiple threats simultaneously (intrusion,
-    fire) while providing emergency responses.
+- **🔌 Resource Efficiency**  
+  Combining multiple home systems on a single microcontroller reduces hardware costs and energy consumption.
 
--   **Sustainability**: Implementing rainwater harvesting to promote
-    environmental conservation and reduce water consumption.
+- **🛡️ Safety and Security**  
+  A unified system that responds to multiple threats like intrusion and fire, with real-time alarms and emergency protocols.
 
--   **Energy Conservation**: Using motion detection for lighting control
-    to minimize electricity usage.
+- **🌱 Sustainability**  
+  Promotes environmental conservation by implementing rainwater harvesting and minimizing water wastage.
 
-# Innovation/Uniqueness
+- **⚡ Energy Conservation**  
+  Motion-activated lighting helps reduce unnecessary electricity usage.
 
-The project stands out in several ways:
+---
 
-1.  **Integrated Approach**: Unlike most DIY solutions that focus on a
-    single aspect of home automation, this system combines security,
-    safety and resource management in one circuit.
+## 🌟 Innovation & Uniqueness
 
-2.  **Emergency Intelligence**: The system features cross-functional
-    emergency protocols, such as automatically unlocking doors when a
-    fire is detected.
+This project stands out due to its thoughtful integration and intelligent design features:
 
-3.  **Debounced Sensing**: Implements sophisticated sensor debouncing
-    techniques to prevent false alarms from ultrasonic and IR sensors.
+- **🧩 Integrated Approach**  
+  Combines security, safety, and resource management in a single cohesive system — unlike typical single-purpose DIY systems.
 
-4.  **Password Protection**: Incorporates a code verification system
-    with multiple authorized users.
+- **🚨 Emergency Intelligence**  
+  Automatically unlocks doors during fire emergencies for safe evacuation.
 
-5.  **Graceful Motion**: Servo motors move gradually rather than
-    abruptly, extending component life and providing visual feedback.
+- **🔄 Debounced Sensing**  
+  Reduces false alarms by implementing debounce logic for ultrasonic and IR sensors.
 
-6.  **Non-Blocking Design**: The entire system operates without blocking
-    delays, allowing all systems to run concurrently.
+- **🔐 Password Protection**  
+  Multi-user code verification system for authorized access control.
 
-7.  **Adaptive Calibration**: The rainwater sensor uses adaptive
-    thresholds to accommodate different environmental conditions.
+- **🔁 Graceful Motion**  
+  Servo motors move gradually, reducing wear and tear and offering smooth mechanical feedback.
 
-# Hardware Requirements
+- **⏱️ Non-Blocking Design**  
+  Uses efficient programming patterns that allow concurrent operation of all subsystems without delays.
 
-**Security and Fire Detection System**
+- **🌧️ Adaptive Calibration**  
+  Rain detection uses threshold tuning to accommodate varying environmental conditions.
 
--   Arduino board (e.g., Arduino Uno or Mega)
+---
 
--   Ultrasonic distance sensor (HC-SR04)
+## 🔧 Hardware Requirements
 
--   IR motion sensor
+### 🔐 Security and Fire Detection System
 
--   Flame sensor
+- Arduino board (Uno/Mega recommended)  
+- Ultrasonic distance sensor (HC-SR04)  
+- IR motion sensor  
+- Flame sensor  
+- Piezo buzzer  
+- Servo motor (for door locking)  
+- Red and green LEDs  
+- 220Ω resistors for LEDs  
 
--   Piezo buzzer
+### 💦 Rainwater Harvesting System
 
--   Servo motor (for door lock)
+- Analog rain sensor  
+- Water level sensor  
+- Servo motor (for controlling water valve)  
+- Pull-up resistors (if needed)  
 
--   Red and green LEDs
+### 💡 Smart Lighting System
 
--   Resistors for LEDs (220Ω)
+- Additional ultrasonic sensor (HC-SR04)  
+- Blue LED  
+- Power supply for LED/light circuit  
 
-**Rainwater Harvesting System**
+### 🧰 Miscellaneous
 
--   Rain sensor (analog)
+- Breadboard and jumper wires  
+- 5V–9V regulated power supply for Arduino  
+- USB cable or wireless module for serial communication
 
--   Water level sensor
+  ![components](https://github.com/user-attachments/assets/92f9174f-f494-4e1f-9250-03f6eb558c34)
+<br>
 
--   Servo motor (for valve control)
-
--   Resistors for pull-up (if needed)
-
+## Flowcharts
+**Main Program Loop**
+![mainprogramloop](https://github.com/user-attachments/assets/ac1e10b2-1fa7-4f50-8762-e21e69beb376)
+<br>
+<br>
+**Security System**
+![security](https://github.com/user-attachments/assets/bd78c580-2168-421c-b316-fc783a15a60d)
+<br>
+<br>
+**Rain Water Harvesting System**
+![rain](https://github.com/user-attachments/assets/49aa3349-69a0-4e4c-bde3-504ffa15c14c)
+<br>
+<br>
 **Smart Lighting System**
+![SmartLighting](https://github.com/user-attachments/assets/9c78882a-99da-44a3-87a3-69ac76818f1b)
+<br>
 
--   Additional ultrasonic sensor (HC-SR04)
 
--   Blue LED
 
--   Power supply for lights
-
-**Miscellaneous**
-
--   Breadboard and jumper wires
-
--   Power supply for Arduino
-
--   Serial communication interface (USB or wireless)
-
-  -----------------------------------------------------------------------
-  Component Name                                   Quantity
-  ------------------------------------------------ ----------------------
-  Arduino Board (e.g., Uno)                        **1**
-
-  Ultrasonic Sensor                                **2**
-
-  IR Sensor                                        **1**
-
-  Buzzer                                           **1**
-
-  Servo Motor                                      **2**
-
-  LED (Red)                                        **1**
-
-  LED (Green)                                      **1**
-
-  LED (Blue)                                       **1**
-
-  Flame Sensor (Digital)                           **1**
-
-  Rain Sensor (Analog)                             **1**
-
-  Water Level Sensor                               **1**
-
-  Breadboard                                       **1**
-  -----------------------------------------------------------------------
-
-# Flowcharts
-
-![](vertopal_2dced53eb96a47d5907fc82e53fc933f/media/image1.png){width="4.6in"
-height="3.441666666666667in"}
-
-![](vertopal_2dced53eb96a47d5907fc82e53fc933f/media/image2.png){width="3.7756944444444445in"
-height="5.405555555555556in"}![](vertopal_2dced53eb96a47d5907fc82e53fc933f/media/image3.png){width="3.6506944444444445in"
-height="5.447222222222222in"}
-
-![](vertopal_2dced53eb96a47d5907fc82e53fc933f/media/image4.png){width="8.097248468941382in"
-height="6.838542213473316in"}**[Security System]{.underline}**
 
 # 
 
 **Circuit
-Diagram**![](vertopal_2dced53eb96a47d5907fc82e53fc933f/media/image5.png){width="6.933847331583552in"
-height="5.234375546806649in"}
+Diagram**
+![circuitdiagram](https://github.com/user-attachments/assets/4792ce2f-cfff-469d-bc14-b197b7feaeb4)
 
-# Code Details
 
-The code is organized into three main subsystems that share the
-Arduino\'s resources:
+## 📦 Code Details
 
-1.  [Security System:]{.underline} Handles intrusion detection, fire
-    detection, and door locking mechanisms.
+### 1. Security System Functions
 
-2.  [Rainwater System]{.underline}: Manages rain detection and water
-    valve control.
+- `initializeSecuritySystem()` – Sets up pins, servo, and initial states  
+- `detectIntrusion()` – Uses ultrasonic and IR sensors to detect presence near the door  
+- `promptForCode()` – Prompts for access code when someone is detected  
+- `verifyAccessCode()` – Validates the entered access code  
+- `unlockDoor()` – Unlocks the door upon successful verification  
+- `lockDoor()` – Relocks the door after timeout or command  
+- `updateServoPosition()` – Moves servo smoothly to lock/unlock position  
+- `resetAwaitingCode()` – Cancels code prompt if the person leaves  
+- `triggerInvalidCodeAlarm()` – Activates alarm on wrong code  
+- `doubleBeep()` – Notification tone for events  
+- `runSecuritySystem()` – Main coordinator for security functions
 
-3.  [Smart Lighting System:]{.underline} Controls lighting based on
-    motion detection.
+### 2. Fire Detection System Functions
 
-Each system has its own initialization function, update function, and
-dedicated set of pins. The systems operate independently but can
-influence each other, such as when the fire detection system triggers
-the emergency door unlock mechanism. Code has following functions:
+- `detectFireHazard()` – Monitors flame sensor for fire detection  
+- `triggerFireAlarm()` – Activates alarm and emergency mechanisms  
+- `updateFireAlarm()` – Maintains alarm status and response  
+- `resetFireAlarm()` – Resets alarm after fire is gone  
+- `emergencyUnlock()` – Automatically unlocks door during a fire
 
-1.  **Security System Functions**
+### 3. Rainwater Harvesting System Functions
 
--   [initializeSecuritySystem()]{.underline}: Sets up pins, servo, and
-    initial states for the security system
+- `initializeRainwaterSystem()` – Initializes pins and servo for valve control  
+- `updateRainwaterSystem()` – Uses rain sensor and water level to manage valve
 
--   [detectIntrusion():]{.underline} Uses ultrasonic and IR sensors to
-    detect if someone is near the door
+### 4. Smart Lighting System Functions
 
--   [promptForCode():]{.underline} Requests an access code when a person
-    is detected
+- `initializeLightingSystem()` – Sets up motion detection for lighting  
+- `updateLighting()` – Activates/deactivates light based on motion
 
--   [verifyAccessCode():]{.underline} Checks if entered code matches
-    authorized codes
+---
 
--   [unlockDoor():]{.underline} Opens the door when access is granted
+## 🔄 Integration Flow
 
--   [lockDoor():]{.underline} Re-locks the door after timeout or on
-    command
+- `setup()` – Initializes all subsystems  
+- `loop()` – Continuously calls update functions for each subsystem  
+- Systems are **non-blocking** and designed to **work concurrently** without interference
 
--   [updateServoPosition():]{.underline} Gradually moves the door lock
-    servo to target position
+---
 
--   [resetAwaitingCode():]{.underline} Cancels code request if no person
-    is detected anymore
+## ✅ Project Outcome
 
--   [triggerInvalidCodeAlarm():]{.underline} Activates alarm when
-    incorrect code is entered
+- ✅ **Unified Home Management** – Integrated control of security, safety, and environment  
+- ✅ **Reliable Intruder Detection** – Debounced multi-sensor detection system  
+- ✅ **Fire Safety Measures** – Automatic alarms and emergency door unlocking  
+- ✅ **Secure Access Control** – Multi-user code-based verification  
+- ✅ **Water Conservation** – Rainwater harvesting with overflow prevention  
+- ✅ **Energy Efficiency** – Smart lighting system based on real-time motion detection  
+- ✅ **Minimal Hardware Use** – Multi-purpose sensors and actuators  
+- ✅ **Non-Blocking Operation** – Efficient timing and concurrent execution
 
--   [doubleBeep():]{.underline} Produces notification sound for various
-    security events
+---
 
--   [runSecuritySystem():]{.underline} Main function that coordinates
-    security operations
+## 👩‍💻 Individual Contributions
 
-2.  **Fire Detection System Functions**
+### Security and Fire Detection Systems
 
--   [detectFireHazard():]{.underline} Checks flame sensor for fire
-    detection
+- **Shefali Bishnoi (2301CS87)**  
+  - Developed the security subsystem using ultrasonic and IR sensors  
+  - Implemented access code verification and servo-controlled door locking
 
--   [triggerFireAlarm():]{.underline} Activates alarm and emergency
-    procedures when fire is detected
+- **Juhi Sahni (2301CS88)**  
+  - Developed the fire detection system using flame sensors  
+  - Implemented emergency protocols: alarms, door unlocking, and reset functions
 
--   [updateFireAlarm():]{.underline} Manages ongoing fire alarm state
-    and responses
+### Environmental Control Systems
 
--   [resetFireAlarm():]{.underline} Turns off alarm when fire is no
-    longer detected
+- **Saniya Prakash (2301CS49)**  
+  - Designed the rainwater system with rainfall detection and tank monitoring  
+  - Automated servo-controlled water valve based on rainfall and tank status
 
--   [emergencyUnlock():]{.underline} Automatically unlocks door during
-    fire emergency
+- **Manvitha Reddy (2301CS29)**  
+  - Implemented motion-based smart lighting  
+  - Designed power-saving lighting logic with auto timeout
 
-3.  **Rainwater Harvesting System Functions**
+---
 
--   [initializeRainwaterSystem():]{.underline} Sets up pins and servo
-    for rainwater system
+## 📌 Conclusion
 
--   [updateRainwaterSystem():]{.underline} Checks rain sensor and water
-    tank level to control valve
+Each subsystem was developed and tested independently, then integrated into a robust and cohesive smart home automation solution. The system demonstrates:
 
-4.  **Smart Lighting System Functions**
+- Modular design
+- Efficient hardware usage
+- Effective team collaboration
+- Seamless real-time operation
 
--   [initializeLightingSystem():]{.underline} Sets up pins for
-    motion-activated lighting
-
--   [updateLighting():]{.underline} Detects motion and controls lights
-    based on presence
-
-Each subsystem works independently but is integrated into the main
-program flow, with setup() initializing all systems and loop() running
-them continuously.
-
-Project Outcome
-
-The integrated smart home system successfully achieved the following
-results:
-
-1.  **Unified Home Management**: Created a single system that handles
-    security, safety, resource management, and convenience features.
-
-2.  **Reliable Detection**: The security system can detect intruders
-    using multiple sensors with debouncing to minimize false alarms.
-
-3.  **Fire Safety**: The system can detect fire hazards and
-    automatically unlock doors for emergency evacuation while activating
-    alarms.
-
-4.  **Access Control**: Implemented a multi-user code verification
-    system for authorized entry.
-
-5.  **Water Conservation**: Created an automated rainwater harvesting
-    system that collects water when it rains and prevents overflow.
-
-6.  **Energy Efficiency**: Implemented motion-activated lighting that
-    only operates when needed.
-
-7.  **Hardware Economy**: Achieved multiple home automation functions
-    with minimal hardware through efficient integration.
-
-8.  **Non-Blocking Operation**: All systems operate concurrently without
-    interfering with each other through proper timing management.
-
-# Individual Contributions
-
-**Security and Fire Detection Systems**
-
--   **[Shefali Bishnoi (2301CS87):]{.underline}** Developed the security
-    system with ultrasonic and IR sensor integration for intrusion
-    detection. Implemented the access code verification system and door
-    locking mechanism with servo control for authorized entry.
-
--   **[Juhi Sahni (2301CS88):]{.underline}** Created the fire detection
-    system using flame sensors to monitor for fire hazards. Implemented
-    emergency protocols including alarm triggering, automatic door
-    unlocking during fire emergencies, and reset functionality when fire
-    is no longer detected.
-
-**Environmental Control Systems**
-
--   **[Saniya Prakash (2301CS49):]{.underline}** Designed the rainwater
-    harvesting system with rain sensors and water level detection.
-    Implemented automated valve control to direct rainwater collection
-    based on rainfall intensity and storage tank capacity.
-
--   **[Manvitha Reddy (2301CS29):]{.underline}** Developed the smart
-    lighting system using ultrasonic sensors for motion detection.
-    Created energy-efficient lighting control with automatic timeout
-    features for testing and operation.
-
-**Each subsystem functions independently while being integrated into a
-cohesive smart home automation solution. The code demonstrates effective
-teamwork through standardized timing mechanisms, shared hardware
-resources, and consistent debugging outputs.**
+---
